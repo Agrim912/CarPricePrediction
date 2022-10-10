@@ -8,10 +8,11 @@
 </head>
 
 <body>
-
     <div style="color:blue">
+        
         <form action="{{ url_for('predict')}}" method="post">
-            <h2>Predictive analysis</h2>
+            
+            <h2 style="font-size: 70pxpx;color: rgb(246, 239, 239);">Predictive analysis</h2>
             <h3>Year</h3>
             <input id="first" name="Year" type="number ">
             <h3>What is the Showroom Price?(In lakhs)</h3><br><input id="second" name="Present_Price" required="required">
@@ -47,12 +48,52 @@
 
 
     <style>
+        * {
+      -webkit-transition: all .5s;
+      -webkit-animation-name: myfading;
+      -webkit-animation-duration: 1s;
+
+      
+        }
+
+        @-webkit-keyframes myfading {
+            from {
+                    opacity: 0;
+                    -webkit-transition: opacity;
+                    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+                    filter: blur(5px);
+                    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+            }
+            to {
+                    opacity: 1;
+            }
+        }
+        h3{
+            font-size: 30px;
+            color:yellow;
+        }
         body {
-            background-color: lightslategray;
+            background-image: url("{{url_for('static', filename='background.jpg')}}") ;
+            /* background-color: lightslategray; */
             text-align: center;
             padding: 0px;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            /* background: rgba(76, 175, 80, 0.3); */
+            /* filter: blur(8px); */
         }
-        
+        /* form{
+            border: 12px solid black;
+            border-radius: 22%;
+            background-color: lightslategray;
+            opacity: 0.3;
+            /* height: fit-content;
+            width: fit-content; */
+            
+        } */
         #research {
             font-size: 18px;
             width: 100px;
